@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowJs": true,
+    "noEmit": true,
+    "useDefineForClassFields": true,
+    "types": ["vite/client", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components/ui/*": ["./src/shared/components/ui/*"],
+      "@/components/tema/*": ["./src/shared/components/layout/*"],
+      "@/components/compartidos/*": ["./src/shared/components/common/*"],
+      "@/components/auth/*": ["./src/features/auth/components/*"],
+      "@/components/dashboard/*": ["./src/features/dashboard/components/*"],
+      "@/components/productos/*": ["./src/features/productos/components/*"],
+      "@/components/inventario/*": ["./src/features/inventario/components/*"],
+      "@/components/facturas/*": ["./src/features/facturas/components/*"],
+      "@/components/presupuesto/*": ["./src/features/presupuestos/components/*"],
+      "@/components/reportes/*": ["./src/features/reportes/components/*"],
+      "@/components/clientes/*": ["./src/features/clientes/components/*"],
+      "@/components/precios/*": ["./src/features/precios/components/*"],
+      "@/components/ventas/*": ["./src/features/ventas/components/*"],
+      "@/hooks/*": ["./src/shared/hooks/*"],
+      "@/lib/*": ["./src/shared/lib/*"],
+      "@/types/*": ["./src/shared/types/*"]
+    }
+  },
+  "include": ["src", "globals.d.ts"]
+}

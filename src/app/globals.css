@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base neutra con un pelo de temperatura calida (no gris puro de
+       fabrica) para que no se sienta frio/generico. */
+    --background: 30 20% 98%;
+    --foreground: 222 39% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 39% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 39% 11%;
+    /* Azul petroleo profundo: color de accion/confianza, deliberadamente
+       distinto del verde (plata que entra) y el rojo (plata que sale /
+       error), para que el color realmente signifique algo en vez de ser
+       decoracion. */
+    --primary: 213 74% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 14% 95%;
+    --secondary-foreground: 222 39% 11%;
+    --muted: 30 14% 95%;
+    --muted-foreground: 220 9% 44%;
+    --accent: 213 40% 94%;
+    --accent-foreground: 213 74% 24%;
+    --destructive: 4 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 14% 89%;
+    --input: 220 14% 89%;
+    --ring: 213 74% 30%;
+    /* Verde/rojo reservados exclusivamente para plata que entra/sale
+       (usar estos, no un verde/rojo tipeado a mano por componente). */
+    --income: 152 60% 30%;
+    --income-foreground: 0 0% 100%;
+    --expense: 4 72% 45%;
+    --expense-foreground: 0 0% 100%;
+    --radius: 0.5rem;
+    --sidebar-background: 222 39% 11%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-accent: 213 50% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 222 30% 18%;
+    /* El sidebar es siempre oscuro (no sigue el tema claro/oscuro de la
+       pagina), asi que su color de "item seleccionado" tiene que ser fijo
+       tambien - no el --primary general, que cambia de tono entre modo
+       claro y oscuro y quedaba inconsistente/lavado sobre el sidebar. */
+    --sidebar-primary: 213 90% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 222 35% 7%;
+    --foreground: 210 30% 96%;
+    --card: 222 32% 10%;
+    --card-foreground: 210 30% 96%;
+    --popover: 222 32% 10%;
+    --popover-foreground: 210 30% 96%;
+    --primary: 213 70% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 24% 15%;
+    --secondary-foreground: 210 30% 96%;
+    --muted: 222 24% 15%;
+    --muted-foreground: 215 18% 62%;
+    --accent: 213 40% 18%;
+    --accent-foreground: 210 60% 88%;
+    --destructive: 4 65% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 20% 18%;
+    --input: 222 20% 18%;
+    --ring: 213 70% 52%;
+    --income: 152 45% 45%;
+    --income-foreground: 0 0% 100%;
+    --expense: 4 65% 55%;
+    --expense-foreground: 0 0% 100%;
+    --sidebar-background: 222 39% 8%;
+    --sidebar-foreground: 210 20% 88%;
+    --sidebar-accent: 213 40% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 222 25% 14%;
+    --sidebar-primary: 213 90% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  a {
+    @apply text-foreground hover:text-primary transition-colors;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply bg-background border-border text-foreground;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 9999px;
+  }
+}
